@@ -42,7 +42,7 @@ top: -30px; }
   </head>
   <body>
 <div id="fullpage">
-		<div id="blasphemerm" class="section fp-auto-height-responsive pb-0 pb-md-0"  style="background-color: #FAFDF3;"> 
+		<div id="dancesofthehollowm" class="section fp-auto-height-responsive pb-0 pb-md-0"  style="background-color: #FAFDF3;"> 
 		<div class="row">
 			<div class="col-12 offset-0 col-md-5 offset-md-1">
 					<span class="date d-none d-md-block" style="top: -125px;">04 Mar 2021</span>
@@ -274,10 +274,10 @@ And brought us home, from our death’s womb</p>
 	//Navigation
 	menu: '#menu',
 	lockAnchors: false,
-	anchors:['blasphemer', 'ficklewaters', 'authorofshame', 'thefound'],
+	anchors:['dancesofthehollow', 'ficklewaters', 'authorofshame', 'thefound'],
 	navigation: true,
 	navigationPosition: 'right',
-	verticalNavigationTooltips: ['Blasphemer', 'The Fickle Waters', 'The Author of Shame', 'The Found'],
+	verticalNavigationTooltips: ['Dances of the Hollow', 'The Fickle Waters', 'The Author of Shame', 'The Found'],
 	showActiveTooltip: true,
 	slidesNavigation: true,
 	slidesNavPosition: 'bottom',
@@ -347,7 +347,17 @@ And brought us home, from our death’s womb</p>
 	afterSlideLoad: function(section, origin, destination, direction){},
 	onSlideLeave: function(section, origin, destination, direction){}
 });
-						  }
+						  } else {
+
+jump(window.location.href.split("/").pop().split("#").pop() + "m");
+													}
+
+function jump(h){
+    var url = location.href;               //Save down the URL without hash.
+    location.href = "#"+h;                 //Go to the target element.
+    history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
+}
+
 				  </script>
 
   </body>
