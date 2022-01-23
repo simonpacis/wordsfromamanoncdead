@@ -33,6 +33,7 @@ nnoremap -D ""D
 nnoremap -d ""d
 nnoremap -ø :Mdto docx
 nnoremap -æ :Mdto pdf
+nnoremap -p :call WlTable()
 nmap -u [unite]
 nmap -bl :ls
 nmap -bq :bp | bd #
@@ -89,9 +90,9 @@ nmap ySs <Plug>YSsurround
 nmap yss <Plug>Yssurround
 nmap yS <Plug>YSurround
 nmap ys <Plug>Ysurround
-nnoremap <SNR>127_: :=v:count ? v:count : ''
-nnoremap <SNR>98_: :=v:count ? v:count : ''
 nnoremap <SNR>122_: :=v:count ? v:count : ''
+nnoremap <SNR>98_: :=v:count ? v:count : ''
+nnoremap <SNR>127_: :=v:count ? v:count : ''
 vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))
 nnoremap <silent> <Plug>SurroundRepeat .
@@ -165,6 +166,7 @@ set laststatus=2
 set listchars=tab:|\ 
 set mouse=n
 set runtimepath=~/.vim,~/.vim/pack/vendor/start/nerdtree,~/.vim/pack/themes/start/dracula,~/.vim/pack/dist/start/vim-airline,~/.vim/bundle/citation.vim,~/.vim/bundle/ctrlp.vim,~/.vim/bundle/emmet-vim,~/.vim/bundle/goyo.vim,~/.vim/bundle/gruvbox,~/.vim/bundle/nerdtree,~/.vim/bundle/PHP-Indenting-for-VIm,~/.vim/bundle/sparkup,~/.vim/bundle/surround,~/.vim/bundle/unite.vim,~/.vim/bundle/vim-fugitive,~/.vim/bundle/vim-javascript,~/.vim/bundle/Vundle.vim,/usr/local/share/vim/vimfiles,/usr/local/share/vim/vim82,~/.vim/pack/themes/start/dracula/after,/usr/local/share/vim/vimfiles/after,~/.vim/bundle/vim-javascript/after,~/.vim/after
+set shiftwidth=4
 set showtabline=2
 set tabline=%!airline#extensions#tabline#get()
 set tabstop=4
@@ -329,7 +331,7 @@ setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
 setlocal scrolloff=-1
-setlocal shiftwidth=8
+setlocal shiftwidth=4
 setlocal noshortname
 setlocal showbreak=
 setlocal sidescrolloff=-1
@@ -504,12 +506,12 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 50 - ((4 * winheight(0) + 28) / 57)
+let s:l = 48 - ((0 * winheight(0) + 28) / 57)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 50
-normal! 080|
+keepjumps 48
+normal! 071|
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 31 + 104) / 208)
